@@ -34,19 +34,12 @@ jobs:
           args: README.md -s -o release/result.pdf --pdf-engine=wkhtmltopdf
     
       # 将创建的pdf文件上传
-      - uses: actions/upload-artifact@master
-        with:
-          name: result
-          path: release
-          
-      - name: PushCommit
-        run: 
-          git config user.name HaoyangShi
-          git config user.email shyhaoyang@126.com
-          git add .
-          git commit -m "generate README.pdf"
-          git push
-
+      - name: release
+        uses: softprops/action-gh-release@v1
+        with: 
+          files: release/result.pdf
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
           
           
