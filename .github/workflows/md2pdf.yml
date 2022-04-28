@@ -34,10 +34,10 @@ jobs:
           args: README.md -s -o release/result.pdf --pdf-engine=wkhtmltopdf
     
       # 将创建的pdf文件上传
-      - uses: actions/upload-artifact@master
-        with:
-          name: output
-          path: release/result.pdf
+      # - uses: actions/upload-artifact@master
+      #  with:
+      #    name: output
+      #    path: release/result.pdf
 
           
           
