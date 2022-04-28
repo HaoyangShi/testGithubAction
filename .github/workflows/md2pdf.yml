@@ -25,7 +25,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # 创建release文件夹
-      - name: Run a one-line script
+      - name: mkdir release
         run: mkdir release
 
       # 使用pandoc进行转换
