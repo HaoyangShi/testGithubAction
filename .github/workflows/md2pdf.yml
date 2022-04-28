@@ -36,7 +36,8 @@ jobs:
       # 将创建的pdf文件上传
       - name: release
         uses: softprops/action-gh-release@v1
-        with: 
+        with:
+          tag_name: release_pdf
           files: release/result.pdf
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
