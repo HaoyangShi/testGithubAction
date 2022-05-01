@@ -22,22 +22,22 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
 
-      # 创建release文件夹
-      - name: Run a one-line script
-        run: mkdir release
+#       # 创建release文件夹
+#       - name: Run a one-line script
+#         run: mkdir release
 
       # 使用pandoc进行转换
       - uses: docker://ghcr.io/44smkn/pandoc/ja:0.1.1
         with:
-          args: README.md -s -o release/result.pdf --pdf-engine=wkhtmltopdf
+          args: README.md -s -o output/result.pdf --pdf-engine=wkhtmltopdf
     
-      # 将创建的pdf文件上传
-      - uses: actions/upload-artifact@master
-        with:
-          name: output
-          path: release/result.pdf
+#       # 将创建的pdf文件上传
+#       - uses: actions/upload-artifact@master
+#         with:
+#           name: output
+#           path: release/result.pdf
 
           
           
