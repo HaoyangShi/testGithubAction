@@ -6,11 +6,5 @@
 1. https://github.com/pandoc/pandoc-action-example
 2. https://44smkn.hatenadiary.com/entry/2021/03/23/224925
 
-test1
-test2
-
-参考 https://blog.aisensiy.me/github-actions-tips 修改release
-
-test3 参考https://github.com/softprops/action-gh-release
-
-test4
+2022.05.01
+目前仍存在着无法发布到release的问题，会跳过yml中发布的部分
