@@ -42,5 +42,3 @@ jobs:
             --toc 
             -V CJKmainfont="Noto Sans Mono CJK SC"
             -V toc-own-page="true" 
-            -V author="Tieway59"
-            -V date="${{ steps.date.outputs.date }}"
