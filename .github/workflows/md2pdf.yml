@@ -41,10 +41,10 @@ jobs:
       
       - name: PushCommit
         run:
-          git config user.name HaoyangShi
-          git config user.email shyhaoyang@126.com
-          git add .
-          git commit -m "produce result-${{ github.run_number }}.pdf}"
+          git config user.name HaoyangShi;
+          git config user.email shyhaoyang@126.com;
+          git add .;
+          git commit -m "produce result-${{ github.run_number}}.pdf"
           git push
           
           
