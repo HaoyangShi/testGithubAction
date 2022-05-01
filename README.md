@@ -12,3 +12,5 @@ test2
 参考 https://blog.aisensiy.me/github-actions-tips 修改release
 
 test3 参考https://github.com/softprops/action-gh-release
+
+test4
