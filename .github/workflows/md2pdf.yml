@@ -23,47 +23,17 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-      - name: PandocLatex
-        uses: ./
-        with:
-          args: >-
-            pandoc doc/test1.md 
-            -o output/test1.pdf
-            --from markdown 
-            --resource-path=assets 
-            --number-sections 
-            --top-level-division=chapter 
-            --shift-heading-level-by=-1 
-            --highlight-style monochrome 
-            --pdf-engine "xelatex" 
-            --toc 
-            -V CJKmainfont="Noto Sans Mono CJK SC"
-            -V toc-own-page="true" 
-            -V book
-            -V code-block-font-size="\normalsize"
-            
-      - name: UploadArtifact
-        uses: actions/upload-artifact@master
-        with:
-          name: build-${{ github.run_number }}
-          path: artifact
+      
+     # 创建release文件夹
+      - name: mkdir release
+        run: mkdir release
 
-      - name: PushCommit
-        if: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        run: |
-          git config user.name HaoyangShi
-          git config user.email shyhaoyang@126.com
-          git add .
-          git commit -m "CI: produce build${{ github.run_number }}.pdf"
-          git push
-#      # 创建release文件夹
-#      - name: mkdir release
-#        run: mkdir release
-
-#      # 使用pandoc进行转换
-#      - uses: docker://ghcr.io/44smkn/pandoc/ja:0.1.1
-#         with:
-#           args: README.md -s -o release/result.pdf --pdf-engine=wkhtmltopdf
+     # 使用pandoc进行转换
+      - uses: docker://ghcr.io/44smkn/pandoc/ja:0.1.1
+        with:
+          args: README.md -s -o release/result.pdf --pdf-engine=wkhtmltopdf
+          
+      
     
       # 将创建的pdf文件上传
 #       - name: release
