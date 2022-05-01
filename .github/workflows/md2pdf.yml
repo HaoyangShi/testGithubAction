@@ -39,9 +39,9 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: release/result.pdf
-        env:
-          CURRENT_TAG: ${{ steps.version_tag.outputs.VERSION }}
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+ #       env:
+ #         CURRENT_TAG: ${{ steps.version_tag.outputs.VERSION }}
+ #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
           
           
