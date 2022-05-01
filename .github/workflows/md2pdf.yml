@@ -46,7 +46,8 @@ jobs:
           git add .;
           git commit -m "produce result-${{ github.run_number}}.pdf";
           git push
-          
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
           
           
