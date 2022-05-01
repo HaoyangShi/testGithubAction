@@ -42,8 +42,5 @@ jobs:
             --toc 
             -V CJKmainfont="Noto Sans Mono CJK SC"
             -V toc-own-page="true" 
-            -V book
-            -V code-block-font-size="\normalsize"
-            -V title="代码模板"
             -V author="Tieway59"
             -V date="${{ steps.date.outputs.date }}"
