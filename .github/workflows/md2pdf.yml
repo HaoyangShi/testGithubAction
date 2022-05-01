@@ -40,7 +40,6 @@ jobs:
           path: release/result.pdf
       
       - name: PushCommit
-        if: ${{ !startWith(github.ref,'refs/tags/') }}
         run:
           git config user.name HaoyangShi
           git config user.email shyhaoyang@126.com
