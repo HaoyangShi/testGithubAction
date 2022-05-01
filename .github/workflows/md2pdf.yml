@@ -37,14 +37,14 @@ jobs:
       - uses: actions/upload-artifact@master
         with:
           name: build-${{ github.run_number }}
-          path: release/result.pdf
+          path: output/result.pdf
       
       - name: PushCommit
         run:
           git config user.name HaoyangShi
           git config user.email shyhaoyang@126.com
           git add .
-          git commit -m "produce result-${{ github.run_number }}.pdf}
+          git commit -m "produce result-${{ github.run_number }}.pdf}"
           git push
           
           
