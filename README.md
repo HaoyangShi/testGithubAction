@@ -8,3 +8,5 @@
 
 test1
 test2
+
+参考 https://blog.aisensiy.me/github-actions-tips 修改release
